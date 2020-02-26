@@ -1,9 +1,12 @@
-@mixin text ($size:16px, $line:24px) {
+@mixin text ($size:16px, $line:2.3em) {
   margin: 0;
   padding: 0;
-  color: rgb(255, 255, 255);
+  color: #1c1c1c;
   font-family: $font-main;
   font-size: $size;
   font-weight: 500;
   line-height: $line;
+  @media (min-width: $desktop-width) {
+    font-size: 18px
+  }
 }
