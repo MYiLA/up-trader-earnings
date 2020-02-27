@@ -1,52 +1,38 @@
 @font-face {
-    font-family: 'PF DinText Pro'; 
-    src: url('../fonts/pfdintextpro-light.woff2') format('woff2'),
+  font-family: 'PF DinText Pro';
+  src: url('../fonts/pfdintextpro-light.woff2') format('woff2'),
     url('../fonts/pfdintextpro-light.woff') format('woff');
-    font-weight: 300;
-    font-style: normal;
+  font-weight: 300;
+  font-style: normal;
 }
 
 @font-face {
-  font-family: 'PF DinText Pro'; 
+  font-family: 'PF DinText Pro';
   src: url('../fonts/pfdintextpro-medium.woff2') format('woff2'),
-  url('../fonts/pfdintextpro-medium.woff') format('woff');
+    url('../fonts/pfdintextpro-medium.woff') format('woff');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'PF DinText Pro'; 
+  font-family: 'PF DinText Pro';
   src: url('../fonts/pfdintextpro-regular.woff2') format('woff2'),
-  url('../fonts/pfdintextpro-regular.woff') format('woff');
+    url('../fonts/pfdintextpro-regular.woff') format('woff');
   font-weight: 500;
   font-style: normal;
 }
 
-html, body {
+html,
+body {
   box-sizing: border-box;
   max-width: 100%;
   min-width: $mobile-width;
   overflow-x: hidden;
-  @include text;
-}
 
-a {
-  text-decoration: none;
-  @include text;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
 }
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-}
-
-.visually-hidden {
-  @include visually-hidden;
 }

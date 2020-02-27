@@ -1,0 +1,17 @@
+.earnings {
+  @include text;
+
+  a {
+    text-decoration: none;
+    @include text;
+  }
+
+  .visually-hidden {
+    @include visually-hidden;
+  }
+}
+
+.earnings__title {}
+.earnings__list {}
+.earnings__item {}
+.earning-way__wrap {}
