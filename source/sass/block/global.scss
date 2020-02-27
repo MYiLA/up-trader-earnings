@@ -1,26 +1,26 @@
-// @font-face {
-//     font-family: 'Roboto'; 
-//     src: url('../fonts/roboto-light.woff2') format('woff2'),
-//     url('../fonts/roboto-light.woff') format('woff');
-//     font-weight: 300;
-//     font-style: normal;
-// }
+@font-face {
+    font-family: 'PF DinText Pro'; 
+    src: url('../fonts/pfdintextpro-light.woff2') format('woff2'),
+    url('../fonts/pfdintextpro-light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
 
-// @font-face {
-//   font-family: 'Roboto'; 
-//   src: url('../fonts/roboto-medium.woff2') format('woff2'),
-//   url('../fonts/roboto-medium.woff') format('woff');
-//   font-weight: 500;
-//   font-style: normal;
-// }
+@font-face {
+  font-family: 'PF DinText Pro'; 
+  src: url('../fonts/pfdintextpro-medium.woff2') format('woff2'),
+  url('../fonts/pfdintextpro-medium.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
 
-// @font-face {
-//   font-family: 'Roboto'; 
-//   src: url('../fonts/roboto-bold.woff2') format('woff2'),
-//   url('../fonts/roboto-bold.woff') format('woff');
-//   font-weight: 700;
-//   font-style: normal;
-// }
+@font-face {
+  font-family: 'PF DinText Pro'; 
+  src: url('../fonts/pfdintextpro-regular.woff2') format('woff2'),
+  url('../fonts/pfdintextpro-regular.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
 
 html, body {
   box-sizing: border-box;
