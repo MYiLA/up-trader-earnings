@@ -2,7 +2,9 @@
 
 .earning-way__tab {}
 
-.earning-way__title {}
+.earning-way__title {
+  
+}
 
 .earning-way__wrap {}
 
@@ -14,7 +16,12 @@
 
 .earning-way__work-item {}
 
-.earning-way__open-cash {}
+.earning-way__open-cash {
+  @include btn;
+
+  max-width: 155px;
+
+}
 
 .earning-way__media-wrap {
   img {}

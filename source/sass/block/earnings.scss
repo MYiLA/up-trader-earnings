@@ -9,6 +9,31 @@
   .visually-hidden {
     @include visually-hidden;
   }
+
+  ol {
+    counter-reset: myCounter;
+    margin: 0;
+    padding: 0;
+  
+    li {
+      list-style-type: none;
+      position: relative;
+      padding-left: 35px;
+  
+      &:before {
+        counter-increment: myCounter;
+        content: counter(myCounter);
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: $green;
+        display: block;
+        text-align: center;
+        font-size: 32px;
+        line-height: 40px;
+      }
+    }
+  }
 }
 
 .earnings__title {}
