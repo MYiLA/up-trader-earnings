@@ -1,6 +1,15 @@
 .earnings {
   @include text;
-
+  padding-top: 30px;
+  padding-bottom: 45px;
+  background-color: $bg;
+  transition: 0.5s;
+  &--choose {
+    height: 100vh;
+    background-image: url(../img/bg.jpg);
+    background-position: center;
+    background-size: auto 100%;
+  }
   a {
     text-decoration: none;
     @include text;
@@ -30,13 +39,189 @@
         display: block;
         text-align: center;
         font-size: 32px;
-        line-height: 40px;
+        line-height: 32px;
       }
+    }
+  }
+
+  h1 {
+    font-size: 36px;
+    line-height: 40px;
+    font-weight: 300;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 19px;
+    line-height: 24px;
+    font-weight: 400;
+    text-align: left;
+  }
+  h3 {
+    font-weight: 300;
+    font-size: 24px;
+  }
+}
+
+.earnings__title {
+  margin-top: 0;
+  margin-right: 20px;
+  margin-bottom: 24px;
+  margin-left: 20px;
+  transition: 5s;
+}
+
+.earnings__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
+  transition: 5s;
+}
+
+.earnings__item {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+@media (min-width: $tablet-width) {
+  .earnings {
+    height: 100vh;
+    padding-top: 0;
+    padding-bottom: 0;
+    position: relative;
+    background-color: transparent;
+
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      top: 108px;
+      left: 0; 
+      height: 1px;
+      width: 100vw;
+      background-color: rgba(181,181,181, 0.75);
+    }
+
+    h1 {
+      font-size: 38px;
+      line-height: 45px;
+    }
+
+    h2 {
+      font-weight: 300;
+      text-align: center;
+      color: #2e2e2e;
+    }
+  }
+  
+  .earnings__title {
+    position: absolute;
+    text-align: center;
+    width: 100vw;
+    transform: translateY(-300px);
+  }
+
+  .earning-way__tab {
+    display: none;
+  }
+  
+  .earnings__list {
+    display: flex;
+    position: static;
+    z-index: 1;
+    height: 108px;
+    flex-wrap: nowrap;
+    margin-left: 25px;
+    margin-right: 25px;
+
+    &--tab .earning-way__title {
+      background-image: none !important; 
+     }
+    // background-image: linear-gradient(to top, 
+    // rgba(181,181,181, 0.75), 
+    // rgba(181,181,181, 0.75) 1px, 
+    // transparent 1px,
+    // transparent 100% );
+    // background-size: 100vw;
+
+    // серая линия под табами!!!!!!!!!!!!!!!!
+  }
+
+  // .earnings__wrap {
+  //   margin: 0 auto;
+  //   width: 90%;
+  // }
+  
+  .earnings__item {
+    margin: 0;
+  }
+
+  .earnings--choose {
+    background-repeat: no-repeat;
+    background-size: cover;
+    &::after {
+      content: none;
+    }
+  
+    .earnings__title {
+      margin: 0;
+      padding-left: 20px;
+      padding-right: 20px;
+      transform: translateY(30vh);
+    }
+
+    .earnings__list {
+      transform: translateY(45vh);
+    }
+
+    .earning-way {
+      display: flex;
+      justify-content: center;
+    }
+
+    .earning-way__tab {
+      width: 200px;
+      height: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(255, 255, 255, 0.6);
+      border-radius: 50%;
+    }
+
+    .earning-way__title {
+      padding-top: 40px;
+      background-position: center top;
     }
   }
 }
 
-.earnings__title {}
-.earnings__list {}
-.earnings__item {}
-.earning-way__wrap {}
+@media (min-width: $desktop-width) {
+  // .earnings__wrap {
+  //   width: 1200px;
+  // }
+
+  .earnings {
+    h1 {
+      font-size: 48px;
+      line-height: 55px;
+    }
+
+    h2 {
+      font-size: 28px;
+      line-height: 35px;
+    }
+  }
+
+  .earnings__list {
+    width: 1200px;
+    margin: 0 auto;
+  }
+
+  .earnings--choose {
+    .earnings__title {
+      transform: translateY(255px);
+    }
+  }
+}

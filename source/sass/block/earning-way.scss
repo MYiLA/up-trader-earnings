@@ -1,34 +1,287 @@
-.earning-way {}
-
-.earning-way__tab {}
-
-.earning-way__title {
-  
+.earning-way {
+  position: relative;
+  margin-bottom: 11px;
+  .earning-way__work-list {
+    padding-bottom: 20px;
+  }
 }
 
-.earning-way__wrap {}
+.earning-way__tab {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  display: block;
+  width: 100%;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.6);
+  transition: 5s;
 
-.earning-way__desc {}
+  &::after {
+    content: "";
+    position: absolute;
+    right: 15px;
+    top: 48%;
+    transform: translateY(-50%) rotate(135deg);
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    border: solid 2px rgba(9, 11, 12, 0.46);
+    border-left: none;
+    border-bottom: none;
+    transition: 0.5s;
+  }
+}
 
-.earning-way__work-title {}
+.earning-way__title {
+  margin: 0;
+  margin-top: 10px;
+  margin-right: 21px;
+  margin-bottom: 8px;
+  margin-left: 21px;
+  padding-top: 15px;
+  padding-right: 20px;
+  padding-bottom: 15px;
+  padding-left: 50px;
 
-.earning-way__work-list {}
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 35px auto;
 
-.earning-way__work-item {}
+}
+
+.earning-way__wrap {
+  display: none;
+  position: relative;
+  z-index: 1;
+  margin-left: 10px;
+  margin-right: 10px;
+  transition: 0.5s;
+}
+
+.earning-way__desc {
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.earning-way__work-title {
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+
+.earning-way__work-item {
+  margin-bottom: 10px;
+}
 
 .earning-way__open-cash {
   @include btn;
+  margin-bottom: 5px;
 
   max-width: 155px;
-
 }
 
 .earning-way__media-wrap {
-  img {}
+  display: none;
+  position: absolute;
+  bottom: 0;
+  height: 300px;
+  width: 130%;
+  overflow: hidden;
+  right: 50%;
+  transform: translateX(50%);
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to bottom, $bg, $bg 5%, transparent 40% );
+  }
+
+  img {
+    position: absolute;
+    right: -50px;
+    height: 100%;
+
+    @media (min-width: 500px) {
+      right: 50%;
+      transform: translateX(50%);
+      height: 105%;
+    }
+  }
 }
 
-.earning-way__video-wrap {}
+.earning-way__video {
+  display: none;
+  // position: absolute;
+  // z-index: 0;
+  // width: auto; //133
+  // height: 100%;
+  // top: 50%;
+  // left: 50%;
+  // transform: translate(-50%, -50%);
+}
 
-.earning-way__video {}
+.earning-way__play {
+  display: none;
+}
 
-.earning-way__play {}
+.earning-way.open {
+  padding-bottom: 250px;
+  margin-bottom: 20px;
+
+  .earning-way__tab {
+    margin-bottom: 16px;
+  }
+
+  .earning-way__wrap {
+    display: block;
+  }
+
+  .earning-way__media-wrap {
+    display: block;
+  }
+
+  .earning-way__tab::after {
+    top: 53%;
+    transform: translateY(-50%) rotate(-45deg);
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .earning-way {
+    display: flex;
+    position: static;
+    height: 107px;
+    flex-basis: 100vw;
+    margin: 0;
+    padding: 0;
+    padding-top: 0;
+    padding-bottom: 1px;
+    
+
+    &.open {
+      margin: 0;
+      padding: 0;
+      box-shadow: 0 3px 0 -1px rgba(0, 151, 138, 0.5);
+      .earning-way__tab {
+        margin-bottom: 0;
+      }
+    }
+  }
+  
+  .earning-way__tab {
+    margin: 0;
+    background-color: transparent;
+
+    &::after {
+      content: none;
+    }
+  }
+  
+  .earning-way__title {
+    margin: 0;
+    padding: 0;
+    opacity: 0.8;
+  }
+  
+  .earning-way__wrap {
+    position: absolute;
+    margin: 0;
+    width: 60%;
+    max-width: 690px;
+    top: 188px;
+    left: 25px;
+  }
+  
+  // .earning-way__desc {
+  //   margin-top: 0;
+  //   margin-bottom: 30px;
+  // }
+  
+  // .earning-way__work-title {
+  //   margin-top: 0;
+  //   margin-bottom: 24px;
+  // }
+  
+  // .earning-way__work-item {
+  //   margin-bottom: 10px;
+  // }
+  
+  // .earning-way__open-cash {
+  //   @include btn;
+  
+  //   max-width: 155px;
+  // }
+  
+  .earning-way__media-wrap {
+    position: absolute;
+    height: 100vh;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    transform: none;
+    background-color: $white;
+
+    // bottom: 0;
+    // height: 300px;
+    // width: 130%;
+    // overflow: hidden;
+    // right: 50%;
+    // transform: translateX(50%);
+    &::after {
+    //   content: "";
+    //   position: absolute;
+      z-index: -1;
+    //   top: 0;
+    //   right: 0;
+    //   bottom: 0;
+    //   left: 0;
+      background-image: none;
+    }
+  
+    img {
+      right: 55%;
+      height: 100%;
+    }
+  }
+  
+  // .earning-way__video {
+  //   display: block;
+  //   position: absolute;
+  //   z-index: 0;
+  //   width: 133%;
+  //   height: 100%;
+  //   top: 50%;
+  //   left: 50%;
+  //   transform: translate(-50%, -50%);
+  // }
+}
+
+@media (min-width: $desktop-width) {
+  .earning-way__wrap {
+   width: 100vw;
+   max-width: none;
+   left: 0;
+  }
+
+  .earning-way__wrap-desktop {
+    width: 1200px;
+    margin: 0 auto;
+  }
+
+  .earning-way__desc,
+  .earning-way__work-title,
+  .earning-way__work-list {
+    width: 700px;
+  }
+
+  .earning-way__media-wrap {
+  
+    img {
+      right: 50%;
+      transform: translateX(35%);
+    }
+  }
+}
