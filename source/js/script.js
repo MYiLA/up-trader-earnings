@@ -1,13 +1,18 @@
 'use strict';
-// у блока .earnings есть класс .earnings--choose только тогда, когда ни у одного .earning-way нет класса .open
 const earningsElement = document.querySelector('.earnings');
 const earningsListElement = document.querySelector('.earnings__list');
 const earningWayElements = [...earningsElement.querySelectorAll('.earning-way')];
 const earningDescElements = [...earningsElement.querySelectorAll('.earning-way__wrap')];
 const earningMediaElements = [...earningsElement.querySelectorAll('.earning-way__media-wrap')];
 const earningTabElements = [...earningsElement.querySelectorAll('.earning-way__tab')];
+const tabletWidth = 700;
 
 const onClickTab = (index) => {
+    if (earningWayElements[index].classList.contains('open') && window.innerWidth <= tabletWidth) {
+      earningWayElements[index].classList.remove('open')
+      return
+    }
+
   earningWayElements.forEach(
     (element) => {
       element.classList.remove('open')
@@ -20,12 +25,14 @@ const onClickTab = (index) => {
 
   if (!earningsListElement.classList.contains('earnings__list--tab')) {
     earningsElement.classList.add('earnings__list--tab');
-  }
+  };
 
-  setTimeout(() => {earningWayElements[index].classList.add('open')}, 1000);
+  setTimeout(() => {
+    earningWayElements[index].classList.add('open')
+  }, 500);
 }
 
-earningTabElements.forEach (
+earningTabElements.forEach(
   (element, index) => {
     element.addEventListener('click', () => {
       onClickTab(index)
